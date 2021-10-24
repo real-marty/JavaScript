@@ -34,7 +34,7 @@ form button {
   color: #f0b13d;
   background: white;
   cursor: pointer;
-  transition: all 0.6 ease;
+  transition: all 0.6s ease;
 }
 form button:hover {
   background: #f0b13d;
@@ -57,6 +57,7 @@ form button:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: all 0.5s ease;
 }
 .todo li {
   flex: 1;
@@ -72,4 +73,53 @@ form button:hover {
 }
 .complete-btn {
   background: #f0b13d;
+}
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+/* NA popelnici neslo kliknou tak se odstrani touto srackou */
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.fall {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+}
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+select {
+  cursor: pointer;
+  width: 10rem;
+  color: #ff6f47;
+  padding: 1rem;
+}
+
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  background: #ff6f47;
+  top: -5%;
+  right: 0;
+  padding: 1rem;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.select:hover::after {
+  background-color: white;
+  color: #ff6f47;
 }
