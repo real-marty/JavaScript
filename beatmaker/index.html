@@ -65,10 +65,10 @@
       <div class="hihatrack">
         <div class="controls">
           <h1>Hihat</h1>
-          <button data-track="1" class="mute hihat-volume">
+          <button data-track="2" class="mute hihat-volume">
             <i class="fas fa-volume-mute"></i>
           </button>
-          <select name="snare-select" id="snare-select">
+          <select name="hihat-select" id="snare-select">
             <option value="./Sounds/hihat-reso.wav">Hihat Reso</option>
             <option value="./Sounds/hihat-acoustic02.wav">
               Hihat Acouctic
@@ -87,8 +87,19 @@
           <div class="pad hihat-pad b7"></div>
         </div>
       </div>
+      <button class="play">Play</button>
+      <div class="tempo">
+        <input
+          type="range"
+          class="tempo-slider"
+          max="300"
+          min="30"
+          value="150"
+        />
+        <p>Tempo: <span class="tempo-nr">150</span></p>
+      </div>
     </div>
-    <button class="play">Play</button>
+
     <audio class="kick-sound" src="./Sounds/kick-classic.wav"></audio>
     <audio class="snare-sound" src="./Sounds/snare-big.wav"></audio>
     <audio class="hihat-sound" src="./Sounds/hihat-acoustic02.wav"></audio>

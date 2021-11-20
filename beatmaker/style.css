@@ -2,9 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: white;
 }
 body {
   font-family: sans-serif;
+  background-color: rgb(19, 19, 19);
 }
 svg {
   pointer-events: none;
@@ -38,7 +40,6 @@ svg {
 
 .sequencer {
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -77,4 +78,37 @@ svg {
   transition: all 0.5s ease;
 }
 .play {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background-color: grey;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-top: 3rem;
+}
+select {
+  background-color: black;
+  padding: 1rem;
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+.mute.active {
+  background-color: rgb(170, 30, 30);
+}
+/* Sets the remove event to all across the button, without it it's non clicable at the i tag*/
+.fas .fa-volume-mute {
+  pointer-events: none;
+}
+.tempo {
+  margin: 3rem;
+  width: 30%;
+}
+
+@keyframes playTrack {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
 }
