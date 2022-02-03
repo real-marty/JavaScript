@@ -18,7 +18,7 @@ svg {
 .colors {
   min-height: 80vh;
   display: flex;
-  color: rgb(212, 212, 212);
+  color: rgb(27, 27, 27);
 }
 .color {
   height: 80vh;
@@ -39,15 +39,15 @@ svg {
   flex-direction: column;
   position: absolute;
   bottom: 0%;
-  background-color: rgb(75, 73, 73);
+  background-color: rgb(209, 209, 209);
   padding: 1rem;
   width: 80%;
-  opacity: 0;
+  justify-content: center;
+  align-items: center;
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
-  transform: translateY(100px);
+
   transition: all 0.5s ease-in-out;
-  pointer-events: none;
 }
 .sliders.active {
   opacity: 1;
@@ -99,9 +99,18 @@ svg {
 }
 .adjust,
 .lock {
+  padding-bottom: 6rem;
   font-size: 2rem;
   border: none;
-  background-color: none;
+  background-color: transparent;
   cursor: pointer;
   margin: 2rem 0rem;
+}
+input[type="range"] {
+  -webkit-appearance: none;
+  margin: 1rem;
+  width: 100%;
+  position: relative;
+  border-radius: 1rem;
+  cursor: pointer;
 }
