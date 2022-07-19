@@ -5,7 +5,7 @@
 }
 body {
   font-family: "Mulish", sans-serif;
-  color: rgb(51, 51, 51);
+  color: rgb(0, 0, 0);
 }
 button {
   font-family: "Mulish", sans-serif;
@@ -39,23 +39,25 @@ svg {
   flex-direction: column;
   position: absolute;
   bottom: 0%;
-  background: rgb(62, 76, 138);
+  background: rgb(43, 43, 43);
   padding: 1rem;
   width: 80%;
-  /* pointer-events: none; */
+  pointer-events: none;
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
   /* Adding the adjustment class */
-  /* transform: translateY(100px); */
+  transform: translateY(100px);
   transition: all 0.5s ease-in-out;
-  /* opacity: 0; */
+  opacity: 0;
 }
-.sliders .active {
+.sliders.active {
   opacity: 1;
   transform: translateY(0px);
   pointer-events: all;
 }
-.sliders button {
+.sliders button,
+.close-save,
+.close-library {
   position: absolute;
   top: 0;
   right: 0;
@@ -63,13 +65,15 @@ svg {
   border-top-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
   border: none;
-  background-color: rgb(49, 49, 49);
+  background-color: rgb(43, 43, 43);
   color: white;
   cursor: pointer;
 }
 .controls {
+  margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 .panel {
   display: flex;
@@ -81,7 +85,7 @@ svg {
   font-size: 1.2rem;
   margin: 1rem;
   padding: 1rem 2rem;
-  background: rgb(28, 28, 61);
+  background: rgb(43, 43, 43);
   border: none;
   border-radius: 1rem;
   color: white;
@@ -103,7 +107,7 @@ svg {
   border: none;
   background: none;
   cursor: pointer;
-  margin: 2rem 0rem;
+  padding: 1rem 1rem;
 }
 
 /* sliders */
@@ -116,7 +120,9 @@ input[type="range"] {
   cursor: pointer;
 }
 
-.copy-container {
+.copy-container,
+.save-container,
+.library-container {
   position: fixed;
   top: 0%;
   left: 0%;
@@ -125,29 +131,58 @@ input[type="range"] {
   height: 100%;
   display: flex;
   justify-content: center;
+  transition: all 0.6s ease-in-out;
   align-items: center;
   opacity: 0;
   pointer-events: none;
 }
-.copy-popup {
+.copy-popup,
+.save-popup,
+.library-popup {
   background: rgb(241, 241, 241);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   border-radius: 2rem;
-  transition: transform 0.7s ease;
-  transform: translateY(-2rem);
-  min-width: 20%;
-  min-height: 20vh;
+  transition: transform 0.6s ease;
+  transform: translateY(-15rem);
+  min-width: 25%;
+  min-height: 25vh;
 }
-.copy-popup h4 {
-  font-size: 2rem;
+.copy-popup h4,
+.save-popup h4,
+.library-popup h4 {
+  padding: 1rem;
+  font-size: 1.5rem;
 }
-.copy-container.active {
+.copy-container.active,
+.save-container.active,
+.library-container.active {
   opacity: 1;
   pointer-events: all;
 }
-.copy-popup.active {
-  transform: translateY(0rem);
+.copy-popup.active,
+.save-popup.active,
+.library-popup.active {
+  transform: translateY(-8rem);
+}
+.save-name {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+.submit-save {
+  margin: 1.5rem;
+  padding: 0.8rem 2.5rem;
+  background: rgb(43, 43, 43);
+  color: white;
+  font-size: 1rem;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+}
+.save-popup input {
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  width: 50%;
 }
